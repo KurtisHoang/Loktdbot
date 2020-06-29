@@ -22,8 +22,8 @@ fs.readdir('./commands/', (err,files) => {
     if(err) console.log(err);
 
     //filter .js from files
-    let jsFile = files.filter(f => f.split('.').pop() === 'js')
-    
+    let jsFile = files.filter(f => f.split('.').pop() === 'js');
+
     //if less than 0 there are no command files
     if(jsFile <= 0) {
         console.log('could not find commands.');
@@ -47,70 +47,74 @@ bot.once('ready', () => {
 
 bot.on('message', message=> {
 
-    //
-    if(message.author.bot) return;
-    //if it direct message then don't do anything
-    if(message.channel.type === 'dm') return;
-
-    //allow us to add prefix to argument
-    let args = message.content.substring(prefix.length).split(' ');
-
-    //get the file needed
-    let commandFile = bot.commands.get(args[0]);
-    //only gets first argument after prefix
-    switch(args[0])
+    if(message.content[0] = prefix)
     {
-        case 'ping':
-            commandFile.run(message);
-            break;
-        case 'clear':
-            commandFile.run(message, args);
-            break;
-        case 'poll':
+        //
+        if(message.author.bot) return;
+        //if it direct message then don't do anything
+        if(message.channel.type === 'dm') return;
 
-            //if no arguments after !poll
-            if(!args[1]){
-                message.channel.reply('Please input a question');
+        //allow us to add prefix to argument
+        let args = message.content.substring(prefix.length).split(' ');
+        
+        //get the file needed
+        let commandFile = bot.commands.get(args[0]);
+
+        //only gets first argument after prefix
+        switch(args[0])
+        {
+            case 'ping':
+                commandFile.run(message);
                 break;
-            }
+            case 'clear':
+                commandFile.run(message, args);
+                break;
+            case 'poll':
 
-            //getting all arguments into one string
-            var newArgs = '';
+                //if no arguments after !poll
+                if(!args[1]){
+                    message.channel.reply('Please input a question');
+                    break;
+                }
 
-            //applying arguments into one
-            for(i = 1; i < args.length; i++)
-            {
-                newArgs += ' ' + args[i];
-            }
+                //getting all arguments into one string
+                var newArgs = '';
 
-            commandFile.run(message, newArgs);
-            break;
-        case 'avatar':
-            commandFile.run(message);
-            break;
-        case 'rand':
-            commandFile.run(message,args);
-            break;
-        case 'coinflip':
-            commandFile.run(message);
-            break;
-        case 'rr':
-            commandFile.run(message);
-            break;   
-        case 'ba':
-            commandFile.run(message);
-            break; 
-        case 'play':
-            commandFile.run(message, args);
-            break;    
-        case 'stop':
-            commandFile.run(message);
-            break;
-        case 'help':
-            commandFile.run(message);
-            break;
-        default:
-            break;
+                //applying arguments into one
+                for(i = 1; i < args.length; i++)
+                {
+                    newArgs += ' ' + args[i];
+                }
+
+                commandFile.run(message, newArgs);
+                break;
+            case 'avatar':
+                commandFile.run(message);
+                break;
+            case 'rand':
+                commandFile.run(message,args);
+                break;
+            case 'coinflip':
+                commandFile.run(message);
+                break;
+            case 'rr':
+                commandFile.run(message);
+                break;   
+            case 'ba':
+                commandFile.run(message);
+                break; 
+            case 'play':
+                commandFile.run(message, args);
+                break;    
+            case 'stop':
+                commandFile.run(message);
+                break;
+            case 'help':
+                commandFile.run(message);
+                break;
+            default:
+                break;
+        }
     }
 });
 
