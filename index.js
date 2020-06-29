@@ -47,7 +47,7 @@ bot.once('ready', () => {
 
 bot.on('message', message=> {
 
-    if(message.content[0] = prefix)
+    if(message.content[0] === prefix)
     {
         //
         if(message.author.bot) return;
