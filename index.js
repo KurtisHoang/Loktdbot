@@ -112,6 +112,9 @@ bot.on('message', message=> {
             case 'help':
                 commandFile.run(message);
                 break;
+            case 'ff14':
+                commandFile.run(message);
+                break;
             default:
                 break;
         }
