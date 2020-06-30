@@ -9,6 +9,7 @@ module.exports.run = async (message) => {
     const coinflip = '>coinflip flips a coin';
     const rand = '>rand randomly chooses a number between two numbers Ex: >rand 1 10\n';
     const poll = '>poll will set up a yes or no poll Ex: >poll Should I eat a sandwhich?\n';
+    const ff14 = '>ff14 will display a list of ff14 links\n'
     const ba = '>ba is a secret command\n';
     const rr = '>rr is a secret command\n';
     const play = '>play will play a youtube url Ex: >play youtube_url_here\n';
@@ -19,9 +20,9 @@ module.exports.run = async (message) => {
         .setTitle('List of Commands')
         .setDescription(ping + '\n' + clear + '\n'
              + avatar + '\n' + coinflip + '\n'
-             + rand + '\n' + poll + '\n'
-             + play + '\n' + stop + '\n'
-             + ba + '\n' + rr + '\n');
+             + rand + '\n' + poll + '\n' 
+             + ff14 + '\n' + play + '\n' 
+             + stop + '\n' + ba + '\n' + rr + '\n');
 
     message.channel.send(embed);
 }
