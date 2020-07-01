@@ -103,6 +103,9 @@ bot.on('message', message=> {
             case 'ba':
                 commandFile.run(message);
                 break; 
+            case 'oy':
+                commandFile.run(message);
+                break;
             case 'play':
                 commandFile.run(message, args);
                 break;    

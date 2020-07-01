@@ -12,6 +12,7 @@ module.exports.run = async (message) => {
     const ff14 = '>ff14 will display a list of ff14 links\n'
     const ba = '>ba is a secret command\n';
     const rr = '>rr is a secret command\n';
+    const oy = '>oy is a secret command\n';
     const play = '>play will play a youtube url Ex: >play youtube_url_here\n';
     const stop = '>stop will stop any music/sound command\n';
 
@@ -22,7 +23,8 @@ module.exports.run = async (message) => {
              + avatar + '\n' + coinflip + '\n'
              + rand + '\n' + poll + '\n' 
              + ff14 + '\n' + play + '\n' 
-             + stop + '\n' + ba + '\n' + rr + '\n');
+             + stop + '\n' + ba + '\n' 
+             + rr + '\n' + oy + '\n');
 
     message.channel.send(embed);
 }
