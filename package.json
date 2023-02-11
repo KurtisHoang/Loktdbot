@@ -20,7 +20,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-binaries": "^3.2.2-3",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "opusscript": "0.0.7",
     "ytdl-core": "^2.1.7"
   }
